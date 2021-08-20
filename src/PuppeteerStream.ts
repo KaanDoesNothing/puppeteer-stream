@@ -58,8 +58,6 @@ export async function launch(opts: LaunchOptions & BrowserOptions & ChromeArgOpt
 	if (opts.defaultViewport?.width && opts.defaultViewport?.height)
 		opts.args.push(`--window-size=${opts.defaultViewport?.width}x${opts.defaultViewport?.height}`);
 
-	opts.headless = false;
-
 	const browser: Browser = await puppeteer.launch(opts);
 	// @ts-ignore
 	browser.encoders = new Map();
